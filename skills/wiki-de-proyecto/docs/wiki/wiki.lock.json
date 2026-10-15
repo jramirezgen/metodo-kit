@@ -1,0 +1,17 @@
+{
+  "_que_es": "GENERADO por publicar.py — no se edita a mano. Por artefacto, las huellas canónicas del repo Y de la bóveda tal y como quedaron la última vez. Hacen falta las dos: con una sola, adoptar una edición manual la dejaba pisable en la corrida siguiente, porque «la bóveda está donde la dejamos» se leía como «avanzó el generador».",
+  "adoptado": {
+    "01 — Versiones de mapas de SISTEMA.base": {
+      "repo": "a9130b92b09be2eb",
+      "vault": "a9130b92b09be2eb",
+      "sellado": "2026-09-08",
+      "version": 1
+    },
+    "el_wiki_repo.canvas": {
+      "repo": "59cac4b802598d9f",
+      "vault": "59cac4b802598d9f",
+      "sellado": "2026-09-09",
+      "version": 5
+    }
+  }
+}

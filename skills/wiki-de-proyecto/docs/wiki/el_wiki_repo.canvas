@@ -1,0 +1,462 @@
+{
+ "nodes": [
+  {
+   "id": "leyenda",
+   "type": "text",
+   "x": -1400,
+   "y": -1200,
+   "width": 620,
+   "height": 340,
+   "text": "## El wiki repo — el sistema visto por dentro\n*skill `wiki-de-proyecto` v2.0.0 · cifras medidas el 2026-09-08*\n\n🟪 arquitectura · 🟦 lo que el repo guarda · 🟨 compuerta\n🟩 lo que la bóveda tiene hoy · 🟧 lo que hace una persona\n🟥 hueco o deuda declarada\n\n**Se lee de izquierda a derecha, y se vuelve por abajo.**",
+   "color": "6"
+  },
+  {
+   "id": "tesis",
+   "type": "text",
+   "x": -1400,
+   "y": -740,
+   "width": 620,
+   "height": 420,
+   "text": "## La tesis en una frase\n\nLa documentación viva de un proyecto **no cabe en el repo**: se lee y se anota\nen Obsidian, donde no hay historia. Y **no cabe sólo en la bóveda**: ahí no hay\n`diff`, ni `status`, ni nadie que impida pisar lo de ayer.\n\nUn **wiki repo** parte la diferencia como git: el repo guarda la **intención**\n(los generadores y `wiki.json`), la bóveda es el **árbol de trabajo**, y entre\nlos dos hay seis compuertas y un `.lock` con dos huellas.\n\n⚠️ No es un exportador. Un exportador pisa; esto **se niega a pisar**.",
+   "color": "6"
+  },
+  {
+   "id": "r_manifiesto",
+   "type": "text",
+   "x": 0,
+   "y": -1200,
+   "width": 620,
+   "height": 380,
+   "text": "## 1 · `wiki.json` — la INTENCIÓN\n*el equivalente del índice de git*\n\nDeclara `proyecto`, `vault`, `estructura` (dónde va cada cosa dentro de\n`wiki/<PROYECTO>/`), el `frontmatter` que heredan las notas generadas, y las\nlistas `mapas[]` y `bases[]` con su numeración densa.\n\n**ELEMENT hoy: 2 mapas · 3 bases.**\n\nAquí —y sólo aquí— vive lo que sabe de qué proyecto se trata.",
+   "color": "5"
+  },
+  {
+   "id": "r_generadores",
+   "type": "text",
+   "x": 0,
+   "y": -710,
+   "width": 620,
+   "height": 320,
+   "text": "## 2 · `generar_*.py` — la FUENTE\n*el `.canvas` y el `.base` son artefactos, no fuentes*\n\nUn mapa mantenido a mano se desincroniza, y un mapa desincronizado es peor que\nninguno **porque se sigue creyendo**.\n\nELEMENT: 3 generadores propios (`canvas`, `lazo`, `ecuaciones`) + 2\nvendorizados que valen para cualquier proyecto (`incidencias`, `versiones`).",
+   "color": "5"
+  },
+  {
+   "id": "r_piezas",
+   "type": "text",
+   "x": 0,
+   "y": -280,
+   "width": 620,
+   "height": 360,
+   "text": "## 3 · las 7 piezas VENDORIZADAS\n`canvas_lib` · `base_lib` · `wiki_repo_lib` · `publicar`\n`archivar` · `generar_incidencias` · `generar_versiones`\n\n**2 532 líneas de stdlib pura**, copiadas y no enlazadas: el repo tiene que\nseguir siendo autónomo aunque `/mnt/f` no esté montado.\n\n> Se vendoriza **lo que no tiene política**. Lo del proyecto vive en\n> `wiki.json`, nunca dentro del código copiado.",
+   "color": "5"
+  },
+  {
+   "id": "r_lock",
+   "type": "text",
+   "x": 0,
+   "y": 190,
+   "width": 620,
+   "height": 300,
+   "text": "## 4 · `wiki.lock.json` — lo OBSERVADO\n*generado; no se edita a mano*\n\nPor artefacto, **dos** huellas: la canónica del repo **y** la de la bóveda tal\ncomo quedaron la última vez.\n\nHacen falta las dos —igual que el índice de git recuerda el blob *y* el árbol—\no adoptar una edición manual la dejaría pisable en la corrida siguiente.",
+   "color": "5"
+  },
+  {
+   "id": "g_repo",
+   "type": "group",
+   "x": -60,
+   "y": -1324,
+   "width": 740,
+   "height": 1874,
+   "label": "EL REPO — la intención, versionada en git",
+   "color": "5"
+  },
+  {
+   "id": "c_legible",
+   "type": "text",
+   "x": 1400,
+   "y": -1200,
+   "width": 620,
+   "height": 380,
+   "text": "## A · legibilidad del canvas\n`canvas_lib.validar()`\n\nLa etiqueta de una arista es una **caja**, no un punto: mide 188–248 px y se\npinta en el punto medio de la curva.\n\nCon paso 800, nodo 620 y padding 60 → **60 px de corredor**, y **6 de 13\netiquetas quedaron detrás de un nodo**. La primera compuerta miraba el *punto*\nmedio y dio verde con las seis tapadas delante.\n\nHoy: paso **1400** ⇒ corredor **660**. No escribe si falla.",
+   "color": "3"
+  },
+  {
+   "id": "c_base",
+   "type": "text",
+   "x": 1400,
+   "y": -710,
+   "width": 620,
+   "height": 340,
+   "text": "## B · la Base alcanza notas de verdad\n`base_lib.validar()`\n\nLa ruta de un filtro es relativa a la **raíz de la bóveda**, y este disco tiene\ndos que contienen `wiki/ELEMENT/`. Las dos primeras Bases salieron **vacías** y\nObsidian no dice por qué.\n\n`raices_de_boveda()` mide en disco qué directorios tienen `.obsidian/` y emite\nun `inFolder` por cada uno. Una columna que **ninguna** nota declare es\nproblema **duro**.",
+   "color": "3"
+  },
+  {
+   "id": "c_indexado",
+   "type": "text",
+   "x": 1400,
+   "y": -260,
+   "width": 620,
+   "height": 260,
+   "text": "## C · lo publicado está enlazado\n`publicar._comprobar_indexado()`\n\nLa nota puerta `<PROYECTO>.md` tiene que enlazar cada índice, o no se publica\nnada. Es la regla del vault —*se indexa en la misma operación*— hecha\ncompuerta.\n\nDa el renglón exacto que falta; no lo escribe él.",
+   "color": "3"
+  },
+  {
+   "id": "c_no_pisar",
+   "type": "text",
+   "x": 1400,
+   "y": 110,
+   "width": 620,
+   "height": 300,
+   "text": "## D · no se pisa lo que alguien tocó\n`wiki_repo_lib.situacion()`\n\nSi la huella de la bóveda no es la del `.lock`, hubo edición manual: publicar\n**se niega**. O se adopta (`--adoptar`, que es `git add`), o se queda.\n\n`procedencia: manual` en `wiki.json` va más lejos: ese artefacto **nunca** se\nsobrescribe; el sistema sólo lo numera, lo ficha y lo indexa.",
+   "color": "3"
+  },
+  {
+   "id": "c_archivo",
+   "type": "text",
+   "x": 1400,
+   "y": 520,
+   "width": 620,
+   "height": 320,
+   "text": "## E · ningún diseño anterior se pierde\n`archivar.py` + `generar_versiones.py`\n\nAntes de pisar un mapa se copia el vigente a `Versiones/` **con su nota**, que\ntranscluye el lienzo y dice qué nodos nacieron, murieron o cambiaron.\n\nCuatro reglas lo mantienen archivo: canvas ↔ nota siempre en pareja · `mapa_n`\nnombra un mapa declarado · `version` única por mapa · **la `huella` es la del\ncanvas archivado**.",
+   "color": "3"
+  },
+  {
+   "id": "c_indexa_archivo",
+   "type": "text",
+   "x": 1400,
+   "y": 950,
+   "width": 620,
+   "height": 320,
+   "text": "## F · lo archivado se indexa en la misma operación\n`publicar.py` → `generar_versiones.py`\n\nLa compuerta E guarda el diseño; **guardarlo no es conservarlo**. La v2 del lazo\nde control se archivó bien y nació sin índice, sin backlinks y sin salir en\nninguna consulta: el indexador existía desde el día anterior y **había que\nacordarse de correrlo**.\n\nHoy lo llama la publicación en cuanto hay histórico, entre los mapas y las\nbases. Un proyecto que archiva declara su Base del histórico o **no publica**, y\nel generador dicta el bloque JSON exacto que hay que pegar.",
+   "color": "3"
+  },
+  {
+   "id": "g_compuertas",
+   "type": "group",
+   "x": 1340,
+   "y": -1324,
+   "width": 740,
+   "height": 2654,
+   "label": "LAS SEIS COMPUERTAS — lo que impide que esto se pudra",
+   "color": "3"
+  },
+  {
+   "id": "b_puerta",
+   "type": "text",
+   "x": 2800,
+   "y": -1200,
+   "width": 620,
+   "height": 280,
+   "text": "## `<PROYECTO>.md` — la nota puerta\n*la escribe una persona; el sistema sólo la comprueba*\n\nEs el eslabón `index.md → puerta → carpeta`. Sin ella lo publicado existe en el\ndisco y **no existe para nadie**.\n\n`wiki/SISTEMA/` vivía con 52 notas y sin puerta hasta hoy.",
+   "color": "4"
+  },
+  {
+   "id": "b_mapas",
+   "type": "text",
+   "x": 2800,
+   "y": -810,
+   "width": 620,
+   "height": 260,
+   "text": "## `Mapas/` — los `.canvas`\n`01 — …`, `02 — …`, numeración densa siempre.\n\nMás su índice generado `00 — Mapas de <titular>`, que da el orden de lectura.\n\n**wiki/ELEMENT/: 3 canvas publicados.**",
+   "color": "4"
+  },
+  {
+   "id": "b_bases",
+   "type": "text",
+   "x": 2800,
+   "y": -440,
+   "width": 620,
+   "height": 280,
+   "text": "## `Bases/` — bases NATIVAS de Obsidian\n`.base`, no Dataview: se filtran y se ordenan en la interfaz.\n\n**wiki/ELEMENT/: 3 bases** — ecuaciones, incidencias y versiones, cada una con\nsu nota `00 — …` que la abre y la explica.",
+   "color": "4"
+  },
+  {
+   "id": "b_incidencias",
+   "type": "text",
+   "x": 2800,
+   "y": -50,
+   "width": 620,
+   "height": 300,
+   "text": "## `Incidencias/` — el tablero\nUna nota por incidencia: `inc` · `situacion` · `tipo` · `peso` · `mapa_n` ·\n`nodo` · `bloqueado_por`.\n\n`tipo` (`defecto · rfc · mejora`) existe porque **un RFC no es un defecto**: no\ndenuncia una falta, propone arquitectura.\n\n**wiki/ELEMENT/: 14 incidencias.**",
+   "color": "4"
+  },
+  {
+   "id": "b_versiones",
+   "type": "text",
+   "x": 2800,
+   "y": 360,
+   "width": 620,
+   "height": 260,
+   "text": "## `Versiones/` — el histórico de diseños\n`NN — <título> (vN, AAAA-MM-DD).canvas` y su nota.\n\nNunca borra: sólo añade. Es lo que hace que republicar no sea perder.\n\n**wiki/ELEMENT/: 1 diseño archivado.**",
+   "color": "4"
+  },
+  {
+   "id": "g_boveda",
+   "type": "group",
+   "x": 2740,
+   "y": -1324,
+   "width": 740,
+   "height": 2004,
+   "label": "LA BÓVEDA — el árbol de trabajo: 73 notas de ELEMENT",
+   "color": "4"
+  },
+  {
+   "id": "h_lee",
+   "type": "text",
+   "x": 4200,
+   "y": -1200,
+   "width": 620,
+   "height": 240,
+   "text": "## 1 · lee y anota en Obsidian\nEs para lo que existe todo esto. Los mapas se abren, se navegan y se comentan\ndonde el resto del segundo cerebro ya vive.",
+   "color": "2"
+  },
+  {
+   "id": "h_edita",
+   "type": "text",
+   "x": 4200,
+   "y": -850,
+   "width": 620,
+   "height": 280,
+   "text": "## 2 · edita a mano\n*y esto es una función, no un accidente*\n\nMover un nodo, corregir una frase, escribir una incidencia. `situacion()` lo ve\nigual que `git status` ve un fichero sucio.",
+   "color": "2"
+  },
+  {
+   "id": "h_adopta",
+   "type": "text",
+   "x": 4200,
+   "y": -460,
+   "width": 620,
+   "height": 300,
+   "text": "## 3 · adopta, o no\n`publicar.py --adoptar`  ≡  `git add`\n\nAdoptar guarda la huella de la bóveda en el `.lock`: a partir de ahí, esa\nedición es la verdad y el generador tendrá que respetarla.\n\n**No adoptar también es una decisión**: publicar seguirá negándose.",
+   "color": "2"
+  },
+  {
+   "id": "h_declara",
+   "type": "text",
+   "x": 4200,
+   "y": -50,
+   "width": 620,
+   "height": 300,
+   "text": "## 4 · cambia la INTENCIÓN\nEditar `wiki.json` o el generador es lo que de verdad cambia el diseño. Todo lo\ndemás son artefactos.\n\nY luego indexa en la bóveda **en la misma operación**:\n`index.md` (o el sub-mapa) + `vault_audit.py`.",
+   "color": "2"
+  },
+  {
+   "id": "g_humano",
+   "type": "group",
+   "x": 4140,
+   "y": -1324,
+   "width": 740,
+   "height": 1634,
+   "label": "LA PERSONA — dónde el sistema le cede el mando",
+   "color": "2"
+  },
+  {
+   "id": "v_adopta",
+   "type": "text",
+   "x": 2800,
+   "y": 1490,
+   "width": 620,
+   "height": 260,
+   "text": "## vuelve al `.lock`: **la huella**\nAdoptar no cambia el diseño: cambia lo que el sistema **cree que hay** en la\nbóveda. A partir de ahí, esa edición manual es la verdad y el generador tendrá\nque respetarla o negarse.",
+   "color": "2"
+  },
+  {
+   "id": "v_declara",
+   "type": "text",
+   "x": 1400,
+   "y": 1490,
+   "width": 620,
+   "height": 260,
+   "text": "## vuelve a `wiki.json`: **el diseño**\nLo único que cambia de verdad el mapa es la intención. Retocar el artefacto es\nretocar la salida de una función y esperar que la función cambie.",
+   "color": "2"
+  },
+  {
+   "id": "g_lazo",
+   "type": "group",
+   "x": 1340,
+   "y": 1366,
+   "width": 2140,
+   "height": 444,
+   "label": "LA VUELTA — qué regresa de la bóveda al repo, y adónde",
+   "color": "6"
+  },
+  {
+   "id": "d_consumidor",
+   "type": "text",
+   "x": 0,
+   "y": 2090,
+   "width": 620,
+   "height": 360,
+   "text": "## 🟥 quien estrene el tercer wiki repo se queda fuera\n`test_vendorizado.py` declara **2 consumidores** —`element/docs/wiki` y el\n`docs/wiki/` de la propia skill— y desde hoy la suite de ELEMENT **ejecuta los\ncuatro comprobadores de la skill**, no sólo compara su propia copia. Al\nenchufarlos apareció `test_base_lib.py` en rojo desde que `en_carpeta()` exige\nla carpeta absoluta: nadie lo sabía.\n\nLo que sigue abierto: **la lista es manual**. Un repo nuevo no entra solo, y\nnada avisa de que falta — el mismo modo de fallo, un nivel más arriba.",
+   "color": "1"
+  },
+  {
+   "id": "d_sin_bases",
+   "type": "text",
+   "x": 1400,
+   "y": 2090,
+   "width": 620,
+   "height": 360,
+   "text": "## 🟥 el sistema no tabula sus **propias piezas**\nEste wiki repo publica **1 Base**: el histórico de sus diseños, que\n`generar_versiones.py` genera solo. Las siete piezas, sus versiones y qué\nrepo consume cada una **no** están tabuladas.\n\nNo es olvido: `base_lib` rechaza en **duro** una columna que ninguna nota\ndeclare, así que hace falta antes una nota por pieza. Ése es el trabajo que\nfalta, y se **nombra** en vez de rellenarse — la misma regla que rige cada\ncifra de este mapa.",
+   "color": "1"
+  },
+  {
+   "id": "d_dos_raices",
+   "type": "text",
+   "x": 2800,
+   "y": 2090,
+   "width": 620,
+   "height": 340,
+   "text": "## 🟥 hay dos bóvedas anidadas (INC-003)\n`/mnt/f/OBSIDIAN` y `/mnt/f/OBSIDIAN/wiki` tienen las dos su `.obsidian/`.\n\nCada `.base` publica hoy un `or` sobre las dos raíces, y eso **es**\ninformación: dice que este disco tiene más de una bóveda. Pero la causa sigue\nabierta, y cualquier ruta escrita a mano puede volver a fallar en el único modo\nque importa: **en silencio y con la tabla en blanco**.",
+   "color": "1"
+  },
+  {
+   "id": "d_comas",
+   "type": "text",
+   "x": 4200,
+   "y": 2090,
+   "width": 620,
+   "height": 340,
+   "text": "## 🟥 el frontmatter parte las listas por comas\n`bloqueado_por: [\"[[Una nota, con coma]]\"]` pierde el enlace y no lo dice.\n\nYa obligó a declarar **un** bloqueante en INC-014 donde había dos. Es\nexactamente la clase de fallo que esta arquitectura existe para no tener:\nsilencioso, y con el dato mal en la cara de quien lo lee.",
+   "color": "1"
+  },
+  {
+   "id": "g_deuda",
+   "type": "group",
+   "x": -60,
+   "y": 1966,
+   "width": 4940,
+   "height": 544,
+   "label": "LO QUE HOY NO CIERRA — dibujado igual de grande que lo que funciona",
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e001",
+   "fromNode": "r_manifiesto",
+   "fromSide": "right",
+   "toNode": "c_legible",
+   "toSide": "left",
+   "label": "qué hay que publicar"
+  },
+  {
+   "id": "e002",
+   "fromNode": "r_generadores",
+   "fromSide": "right",
+   "toNode": "c_legible",
+   "toSide": "left",
+   "label": "el canvas, antes de escribirlo"
+  },
+  {
+   "id": "e003",
+   "fromNode": "r_piezas",
+   "fromSide": "right",
+   "toNode": "c_base",
+   "toSide": "left",
+   "label": "quién mide"
+  },
+  {
+   "id": "e004",
+   "fromNode": "c_legible",
+   "fromSide": "right",
+   "toNode": "b_mapas",
+   "toSide": "left",
+   "label": "pasa ⇒ se escribe"
+  },
+  {
+   "id": "e005",
+   "fromNode": "c_base",
+   "fromSide": "right",
+   "toNode": "b_bases",
+   "toSide": "left",
+   "label": "pasa ⇒ se publica"
+  },
+  {
+   "id": "e006",
+   "fromNode": "c_indexado",
+   "fromSide": "right",
+   "toNode": "b_puerta",
+   "toSide": "left",
+   "label": "o no se publica nada"
+  },
+  {
+   "id": "e007",
+   "fromNode": "c_no_pisar",
+   "fromSide": "right",
+   "toNode": "b_incidencias",
+   "toSide": "left",
+   "label": "lo tuyo se queda"
+  },
+  {
+   "id": "e008",
+   "fromNode": "c_archivo",
+   "fromSide": "right",
+   "toNode": "b_versiones",
+   "toSide": "left",
+   "label": "lo de ayer se guarda"
+  },
+  {
+   "id": "e009",
+   "fromNode": "b_mapas",
+   "fromSide": "right",
+   "toNode": "h_lee",
+   "toSide": "left",
+   "label": "se abre en Obsidian"
+  },
+  {
+   "id": "e010",
+   "fromNode": "b_incidencias",
+   "fromSide": "right",
+   "toNode": "h_edita",
+   "toSide": "left",
+   "label": "se escribe a mano"
+  },
+  {
+   "id": "e011",
+   "fromNode": "h_edita",
+   "fromSide": "bottom",
+   "toNode": "h_adopta",
+   "toSide": "top",
+   "label": "¿esto pasa a ser la verdad?"
+  },
+  {
+   "id": "e012",
+   "fromNode": "h_adopta",
+   "fromSide": "bottom",
+   "toNode": "v_adopta",
+   "toSide": "right",
+   "label": "sí ⇒ se adopta"
+  },
+  {
+   "id": "e013",
+   "fromNode": "h_declara",
+   "fromSide": "bottom",
+   "toNode": "v_declara",
+   "toSide": "right",
+   "label": "y el diseño se reescribe"
+  },
+  {
+   "id": "e014",
+   "fromNode": "v_adopta",
+   "fromSide": "left",
+   "toNode": "r_lock",
+   "toSide": "bottom"
+  },
+  {
+   "id": "e015",
+   "fromNode": "v_declara",
+   "fromSide": "left",
+   "toNode": "r_manifiesto",
+   "toSide": "bottom"
+  },
+  {
+   "id": "e016",
+   "fromNode": "r_lock",
+   "fromSide": "right",
+   "toNode": "c_no_pisar",
+   "toSide": "left",
+   "label": "compara: repo vs bóveda"
+  }
+ ]
+}

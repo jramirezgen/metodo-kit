@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "fase": "BP",
+  "descripcion": "Catálogo genérico de la wiki corporativa: plan de negocio (BP) y sistemas (SI). Los enlaces_sugeridos son nodos EXTERNOS al catálogo que cada empresa mapea en su enlaces.json.",
+  "nodos": [
+    {
+      "id": "BP0",
+      "tipo": "decision",
+      "titulo": "Arquitectura corporativa: dónde vive cada cosa, capas, sistemas y cadena de análisis MATLAB/R",
+      "depende_de": [],
+      "entrega": "00_ARQUITECTURA_CORPORATIVA.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "cuatro almacenes con una sola función cada uno, mapa de capítulos a nodos y regla de una sola fuente de cifras; sin segunda copia de trabajo en F:",
+      "cubre": [
+        "OBJETIVO"
+      ],
+      "secciones": [],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BP1",
+      "tipo": "doc",
+      "titulo": "Inventario y orden de la información corporativa dispersa",
+      "depende_de": [
+        "BP0"
+      ],
+      "entrega": "01_INVENTARIO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "cada fuente asignada a un capítulo con su estado de verificación y los problemas de orden listados; ningún movimiento sin autorización",
+      "cubre": [
+        "OBJETIVO"
+      ],
+      "secciones": [
+        "Fuentes y a qué capítulo alimentan",
+        "Problemas de orden detectados",
+        "Lo aplicado y lo pendiente de autorización"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BP2",
+      "tipo": "doc",
+      "titulo": "Modelo de negocio: propuesta de valor, caracterización completa del servicio, canvas",
+      "depende_de": [
+        "BP1",
+        "BP17"
+      ],
+      "entrega": "02_MODELO_DE_NEGOCIO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "propuesta de valor por segmento, descripción de cada producto o servicio con alcance y límites, fuentes de ingreso y estructura de costos con cifra y fuente",
+      "cubre": [
+        "OBJETIVO",
+        "MARCA"
+      ],
+      "secciones": [
+        "Resumen ejecutivo",
+        "Propuesta de valor por segmento",
+        "Descripción completa del producto o servicio (alcance, límites, entregables)",
+        "Fuentes de ingreso",
+        "Estructura de costos",
+        "Lienzo del modelo de negocio"
+      ],
+      "enlaces_sugeridos": [
+        "M2",
+        "F5"
+      ]
+    },
+    {
+      "id": "BP3",
+      "tipo": "doc",
+      "titulo": "Análisis de mercado: necesidades, tendencias y estacionalidad, con análisis reproducible",
+      "depende_de": [
+        "BP1"
+      ],
+      "entrega": "03_MERCADO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "tamaño y necesidad con fuente y fecha, tendencias y estacionalidad; cada cifra derivada sale de un script de analisis/ que la reproduce",
+      "cubre": [
+        "MARCA"
+      ],
+      "secciones": [
+        "Necesidades del mercado",
+        "Tamaño del mercado y fuentes",
+        "Tendencias",
+        "Factores estacionales",
+        "Análisis reproducible (scripts y salidas)"
+      ],
+      "enlaces_sugeridos": [
+        "M4"
+      ]
+    },
+    {
+      "id": "BP4",
+      "tipo": "doc",
+      "titulo": "Competencia y posicionamiento: competidores, fortalezas, debilidades y mapa de posición",
+      "depende_de": [
+        "BP3"
+      ],
+      "entrega": "04_COMPETENCIA_Y_POSICIONAMIENTO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "matriz de competidores con fuente, fortalezas y debilidades propias y declaración de posicionamiento defendible con la evidencia",
+      "cubre": [
+        "MARCA"
+      ],
+      "secciones": [
+        "Competidores directos e indirectos",
+        "Fortalezas y debilidades propias y ajenas",
+        "Posicionamiento",
+        "Mapa de posición"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BP5",
+      "tipo": "doc",
+      "titulo": "Clientes: mercado objetivo, segmentos, perfil e investigación de clientes",
+      "depende_de": [
+        "BP3"
+      ],
+      "entrega": "05_CLIENTES.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "segmentos con criterio de elección, perfil del cliente del primer pedido y guion de entrevistas con su plan de análisis; sin datos personales",
+      "cubre": [
+        "MARCA"
+      ],
+      "secciones": [
+        "Mercado objetivo",
+        "Segmentos de clientes",
+        "Perfil del cliente",
+        "Investigación de clientes (guion, muestra, plan de análisis)"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BP6",
+      "tipo": "doc",
+      "titulo": "Viabilidad y escalabilidad con modelo en MATLAB: escenarios, sensibilidad y Monte Carlo",
+      "depende_de": [
+        "BP10",
+        "BP17",
+        "BP2",
+        "BP4",
+        "BP5"
+      ],
+      "entrega": "06_VIABILIDAD_Y_ESCALABILIDAD.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "el modelo lee supuestos.json y se reproduce con matlab -batch; muestra punto de equilibrio, sensibilidad y qué rompe la escalabilidad",
+      "cubre": [
+        "FINANZAS"
+      ],
+      "secciones": [
+        "Viabilidad del producto",
+        "Escalabilidad de la propuesta",
+        "Punto de equilibrio",
+        "Sensibilidad y Monte Carlo (MATLAB)"
+      ],
+      "enlaces_sugeridos": [
+        "F5"
+      ]
+    },
+    {
+      "id": "BP7",
+      "tipo": "doc",
+      "titulo": "Marca: manual de marca, identidad, empaquetado y etiquetado del kit y del informe",
+      "depende_de": [
+        "BP18",
+        "BP4"
+      ],
+      "entrega": "07_MARCA.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "identidad, tono y límites del lenguaje, uso del sello, empaquetado y etiquetado coherentes con la lista de verificación de lenguaje",
+      "cubre": [
+        "MARCA"
+      ],
+      "secciones": [
+        "Identidad del proyecto",
+        "Manual de marca",
+        "Empaquetado y etiquetado",
+        "Tono y límites del lenguaje"
+      ],
+      "enlaces_sugeridos": [
+        "M2"
+      ]
+    },
+    {
+      "id": "BP8",
+      "tipo": "doc",
+      "titulo": "Comercialización: canales, socios, venta B2B, promociones, muestras, método de venta, web y fijación de precios",
+      "depende_de": [
+        "BP18",
+        "BP5",
+        "BP7"
+      ],
+      "entrega": "08_COMERCIALIZACION.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "canal y socio por segmento, método de venta, política de promociones y muestras, y precios por producto enlazados al modelo de costos",
+      "cubre": [
+        "MARCA"
+      ],
+      "secciones": [
+        "Canales de distribución",
+        "Aliados de canal y métodos",
+        "Venta mayorista o B2B",
+        "Promociones y venta",
+        "Muestras y demostraciones",
+        "Método de venta",
+        "Sitio web",
+        "Fijación de precios"
+      ],
+      "enlaces_sugeridos": [
+        "F5",
+        "M3"
+      ]
+    },
+    {
+      "id": "BP9",
+      "tipo": "doc",
+      "titulo": "Relación con clientes: creación, mantenimiento, postventa, garantías y método de gestión",
+      "depende_de": [
+        "BP8"
+      ],
+      "entrega": "09_RELACION_CON_CLIENTES.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "ciclo del cliente, postventa, política de falla y garantías compatibles con la estrategia legal, y qué registra el CRM",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Creación de relaciones con clientes",
+        "Mantenimiento de la relación",
+        "Servicio postventa y garantías",
+        "Método de gestión de la relación (CRM)"
+      ],
+      "enlaces_sugeridos": [
+        "Q1"
+      ]
+    },
+    {
+      "id": "BP10",
+      "tipo": "doc",
+      "titulo": "Plan operativo: prestación del servicio, ubicación, equipos mínimos, cadena de suministro",
+      "depende_de": [
+        "BP1",
+        "BP17"
+      ],
+      "entrega": "10_PLAN_OPERATIVO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "flujo de punta a punta con responsable por paso, ubicación, instalaciones y equipos mínimos, y cadena de suministro",
+      "cubre": [
+        "TECNICO"
+      ],
+      "secciones": [
+        "Plan operativo",
+        "Prestación del servicio o método de producción",
+        "Modalidades: virtual y a domicilio (equipo mínimo de enfermería)",
+        "Ubicación",
+        "Instalaciones y equipos",
+        "Cadena de suministro"
+      ],
+      "enlaces_sugeridos": [
+        "F4",
+        "D3"
+      ]
+    },
+    {
+      "id": "BP11",
+      "tipo": "doc",
+      "titulo": "Gestión de riesgos: matriz con probabilidad, impacto, mitigación y responsable",
+      "depende_de": [
+        "BP10",
+        "BP12"
+      ],
+      "entrega": "11_RIESGOS.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "riesgos legales, de datos, de proveedor, financieros y operativos con mitigación y dueño; los no mitigados se declaran",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Matriz de riesgos (probabilidad, impacto, mitigación, dueño)",
+        "Riesgos no mitigados declarados"
+      ],
+      "enlaces_sugeridos": [
+        "C0"
+      ]
+    },
+    {
+      "id": "BP12",
+      "tipo": "doc",
+      "titulo": "Permisos, licencias y aprobaciones: mínimos para el MVP y los de crecimiento",
+      "depende_de": [
+        "BP10"
+      ],
+      "entrega": "12_PERMISOS_Y_LICENCIAS.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "lista mínima del MVP con base normativa verificada o marcada ⚠️, y la lista de lo que exigiría crecer",
+      "cubre": [
+        "LEGAL"
+      ],
+      "secciones": [
+        "Permisos, licencias y aprobaciones mínimos del MVP",
+        "Lo que exigiría crecer",
+        "Base normativa: verificada o marcada",
+        "Permisos de la toma a domicilio"
+      ],
+      "enlaces_sugeridos": [
+        "C3",
+        "L2"
+      ]
+    },
+    {
+      "id": "BP13",
+      "tipo": "doc",
+      "titulo": "Personas y administración: fuerza laboral de dos, asesores, compensación",
+      "depende_de": [],
+      "entrega": "13_PERSONAS_Y_ADMINISTRACION.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "roles, asesores profesionales necesarios y su costo, compensación de socios y administración mínima",
+      "cubre": [
+        "PERSONAS"
+      ],
+      "secciones": [
+        "Fuerza laboral",
+        "Asesores profesionales",
+        "Compensación",
+        "Administración",
+        "Acuerdo entre los dos socios y rol de enfermería"
+      ],
+      "enlaces_sugeridos": [
+        "P1",
+        "P5"
+      ]
+    },
+    {
+      "id": "BP14",
+      "tipo": "doc",
+      "titulo": "Finanzas: gestión y control, fuentes de financiación y costos iniciales",
+      "depende_de": [
+        "BP10",
+        "BP12",
+        "BP13"
+      ],
+      "entrega": "14_FINANZAS.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "costos iniciales con fuente, control de caja y fuentes de financiación; el estado financiero personal queda fuera de git",
+      "cubre": [
+        "FINANZAS"
+      ],
+      "secciones": [
+        "Gestión y control financiero",
+        "Fuentes de financiación",
+        "Costos iniciales",
+        "Estado financiero personal (solo referencia; vive fuera de git)"
+      ],
+      "enlaces_sugeridos": [
+        "F1",
+        "F5",
+        "C5"
+      ]
+    },
+    {
+      "id": "BP15",
+      "tipo": "doc",
+      "titulo": "Proyecciones financieras con MATLAB y R",
+      "depende_de": [
+        "BP10",
+        "BP13",
+        "BP14",
+        "BP6"
+      ],
+      "entrega": "15_PROYECCIONES.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "estado de resultados y caja a 36 meses por escenario, reproducible desde supuestos.json; supuestos sin fuente marcados",
+      "cubre": [
+        "FINANZAS"
+      ],
+      "secciones": [
+        "Supuestos y su fuente",
+        "Estado de resultados por escenario",
+        "Flujo de caja por escenario",
+        "Reproducción (comando)"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BP16",
+      "tipo": "doc",
+      "titulo": "Plan de crecimiento: acción, objetivos y plazos, recursos y medición del éxito",
+      "depende_de": [
+        "BP6",
+        "BP10",
+        "BP15"
+      ],
+      "entrega": "16_PLAN_DE_CRECIMIENTO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "objetivos con plazo y dueño, recursos necesarios y los indicadores con los que se mide el éxito",
+      "cubre": [
+        "OBJETIVO"
+      ],
+      "secciones": [
+        "Plan de acción",
+        "Objetivos y plazos",
+        "Recursos necesarios",
+        "Medición del éxito (indicadores)",
+        "Otros documentos"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "SI0",
+      "tipo": "decision",
+      "titulo": "Sistemas: arquitectura de CRM, ERP mínimo y data warehouse, con umbral para comprar",
+      "depende_de": [
+        "BP0"
+      ],
+      "entrega": "sistemas/SI0_ARQUITECTURA.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "responsabilidad de cada sistema, claves seudónimas, mapa de capas (presentación, API, aplicación, dominio, datos, integración) con regla de imports y prueba, qué se compra y cuándo, y qué no se pone con su porqué",
+      "cubre": [
+        "TECNICO",
+        "DATOS"
+      ],
+      "secciones": [
+        "Responsabilidades",
+        "Decisiones a escribir",
+        "Mapa de capas"
+      ],
+      "enlaces_sugeridos": [
+        "D1"
+      ],
+      "fase": "SI"
+    },
+    {
+      "id": "SI1",
+      "tipo": "dato",
+      "titulo": "Modelo de datos del CRM, ERP mínimo y data warehouse (esquema SQL, sin PII)",
+      "depende_de": [
+        "SI0"
+      ],
+      "entrega": "sistemas/SI1_ESQUEMA.sql",
+      "entrega_base": "empresa",
+      "hecho_cuando": "esquema con claves seudónimas y constraint que impide columnas de identidad; probado sobre una base vacía",
+      "cubre": [
+        "TECNICO",
+        "DATOS"
+      ],
+      "secciones": [],
+      "enlaces_sugeridos": [
+        "C2"
+      ],
+      "fase": "SI"
+    },
+    {
+      "id": "SI2",
+      "tipo": "infra",
+      "titulo": "Almacén de datos mínimo operable: ETL desde registro y pedidos, con pruebas (sin producto de terceros)",
+      "depende_de": [
+        "SI1"
+      ],
+      "entrega": "analisis/dwh/construir_dwh.py",
+      "entrega_base": "repo",
+      "hecho_cuando": "el ETL construye el almacén desde fuentes de ejemplo, las vistas kpi_* del esquema y de SI2 (incluidas ventas por mes y cupo BGI consumido) se calculan y una prueba verifica que no entra PII",
+      "cubre": [
+        "TECNICO",
+        "DATOS"
+      ],
+      "secciones": [],
+      "enlaces_sugeridos": [],
+      "fase": "SI"
+    },
+    {
+      "id": "BP98",
+      "tipo": "doc",
+      "titulo": "Dossier para presentarnos al primer cliente, completo y robusto",
+      "depende_de": [
+        "BP10",
+        "BP11",
+        "BP12",
+        "BP14",
+        "BP17",
+        "BP18",
+        "BP2",
+        "BP5",
+        "BP7",
+        "BP8",
+        "BP9",
+        "BPR1",
+        "BPR2"
+      ],
+      "entrega": "98_DOSSIER_PRIMER_CLIENTE.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "una versión para el cliente, sin notas internas ni ⚠️ visibles, cuyo contenido sale de los capítulos; cada afirmación aguanta la revisión legal",
+      "cubre": [
+        "OBJETIVO",
+        "MARCA"
+      ],
+      "secciones": [
+        "Qué ofrecemos",
+        "Cómo lo hacemos",
+        "Qué no hacemos",
+        "Precios",
+        "Garantías y datos",
+        "Próximos pasos"
+      ],
+      "enlaces_sugeridos": [
+        "C1"
+      ]
+    },
+    {
+      "id": "BP99",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial independiente del plan corporativo",
+      "depende_de": [
+        "BP11",
+        "BP13",
+        "BP15",
+        "BP16",
+        "BP98",
+        "BPR3",
+        "BPR4",
+        "BPR5",
+        "SI2",
+        "SI3"
+      ],
+      "entrega": "docs/revisiones/BP99_PLAN_CORPORATIVO.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper el plan corporativo; cada hallazgo se verifica contra el texto y entra al tablero",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Alcance de la revisión",
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BPR1",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial de mercado, competencia y clientes",
+      "depende_de": [
+        "BP3",
+        "BP4",
+        "BP5"
+      ],
+      "entrega": "docs/revisiones/BPR1_MERCADO.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper estos capítulos (cifras sin fuente, contradicciones, promesas indebidas, huecos); cada hallazgo se verifica contra el texto y entra al tablero de incidencias antes de corregir",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BPR2",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial de marca, comercialización y relación con clientes",
+      "depende_de": [
+        "BP18",
+        "BP2",
+        "BP7",
+        "BP8",
+        "BP9"
+      ],
+      "entrega": "docs/revisiones/BPR2_COMERCIAL.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper estos capítulos (cifras sin fuente, contradicciones, promesas indebidas, huecos); cada hallazgo se verifica contra el texto y entra al tablero de incidencias antes de corregir",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BPR3",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial de operación, riesgos, permisos y personas",
+      "depende_de": [
+        "BP10",
+        "BP11",
+        "BP12",
+        "BP13",
+        "BP17"
+      ],
+      "entrega": "docs/revisiones/BPR3_OPERACION.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper estos capítulos (cifras sin fuente, contradicciones, promesas indebidas, huecos); cada hallazgo se verifica contra el texto y entra al tablero de incidencias antes de corregir",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "BPR4",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial de viabilidad, finanzas y proyecciones",
+      "depende_de": [
+        "BP6",
+        "BP14",
+        "BP15"
+      ],
+      "entrega": "docs/revisiones/BPR4_FINANZAS.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper estos capítulos (cifras sin fuente, contradicciones, promesas indebidas, huecos); cada hallazgo se verifica contra el texto y entra al tablero de incidencias antes de corregir",
+      "cubre": [
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": []
+    },
+    {
+      "id": "SI3",
+      "tipo": "doc",
+      "titulo": "Capas transversales del sistema: configuración, errores, observabilidad, reproducibilidad, seguridad, concurrencia y empaquetado",
+      "depende_de": [
+        "SI0"
+      ],
+      "entrega": "sistemas/SI3_TRANSVERSALES.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "las siete transversales, cada una con su sitio, su regla y la prueba que la fuerza; el dominio no las importa",
+      "cubre": [
+        "TECNICO",
+        "SEGURIDAD"
+      ],
+      "secciones": [
+        "Configuración",
+        "Errores y códigos de salida",
+        "Observabilidad",
+        "Reproducibilidad",
+        "Seguridad y secretos",
+        "Concurrencia",
+        "Empaquetado y despliegue"
+      ],
+      "enlaces_sugeridos": [],
+      "fase": "SI"
+    },
+    {
+      "id": "BPR5",
+      "tipo": "revision",
+      "titulo": "Revisión adversarial del sistema (CRM, ERP, almacén) por capas",
+      "depende_de": [
+        "SI1",
+        "SI2",
+        "SI3"
+      ],
+      "entrega": "docs/revisiones/BPR5_SISTEMAS.md",
+      "entrega_base": "repo",
+      "hecho_cuando": "un revisor independiente, sin leer el chat, intenta romper estos capítulos (cifras sin fuente, contradicciones, promesas indebidas, huecos); cada hallazgo se verifica contra el texto y entra al tablero de incidencias antes de corregir; incluye el mapa de capas y las siete transversales",
+      "cubre": [
+        "CALIDAD",
+        "TECNICO"
+      ],
+      "secciones": [
+        "Hallazgos verificados",
+        "Hallazgos rechazados",
+        "Nota y brechas"
+      ],
+      "enlaces_sugeridos": [],
+      "fase": "SI"
+    },
+    {
+      "id": "BP17",
+      "tipo": "doc",
+      "titulo": "Estudio técnico: catálogo de pipelines, nivel de madurez (TRL) y lo esperado a nivel corporativo",
+      "depende_de": [
+        "BP1"
+      ],
+      "entrega": "17_ESTUDIO_TECNICO.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "cada pipeline (SMALLRNA, WGS; WES pausado) figura con su versión, su TRL y la evidencia que lo sostiene; se declara qué exige la empresa en cada nivel y la brecha al siguiente; tiempos y costos por muestra salen de corridas medidas, no de estimaciones",
+      "cubre": [
+        "TECNICO",
+        "CALIDAD"
+      ],
+      "secciones": [
+        "Catálogo de pipelines y estado verificado",
+        "Escala de madurez (TRL) y evidencia por pipeline",
+        "Lo esperado a nivel corporativo en cada nivel",
+        "Brecha al siguiente nivel",
+        "Capacidad, tiempos y costo por muestra medidos",
+        "Limitaciones declaradas (no validado clínicamente)"
+      ],
+      "enlaces_sugeridos": [
+        "T1",
+        "T2",
+        "T3"
+      ]
+    },
+    {
+      "id": "BP18",
+      "tipo": "doc",
+      "titulo": "Estrategia de fachada: arquitectura de marca en tres capas y acercamiento amigable al cliente general (estilo de vida)",
+      "depende_de": [
+        "BP4",
+        "BP5"
+      ],
+      "entrega": "18_ESTRATEGIA_DE_FACHADA.md",
+      "entrega_base": "empresa",
+      "hecho_cuando": "la fachada que atrae, el valor que retiene y la sustancia que da confianza están definidas con tono, canales y medición propios; ningún texto de la fachada promete diagnóstico; cada fachada candidata cita la evidencia que la sostiene",
+      "cubre": [
+        "MARCA",
+        "LEGAL"
+      ],
+      "secciones": [
+        "Arquitectura de tres capas: fachada, valor y sustancia",
+        "Fachadas candidatas y la evidencia que las sostiene",
+        "Estrategia amigable de estilo de vida: tono, canales y ejemplos",
+        "Lenguaje aprobado y líneas rojas",
+        "Puente de la fachada al cliente clínico",
+        "Medición por capa"
+      ],
+      "enlaces_sugeridos": [
+        "M2",
+        "Q2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "_": "Manifiesto del wiki repo del PROPIO SISTEMA. La skill `wiki-de-proyecto` se documenta con la misma máquina que instala: si el mapa de la arquitectura se desincroniza, la arquitectura no vale. Lo que este fichero declara es la INTENCIÓN; lo que la bóveda tiene de verdad está en `wiki.lock.json`, que es generado.",
+  "proyecto": "SISTEMA",
+  "vault": "/mnt/f/OBSIDIAN",
+  "estructura": {
+    "mapas": "Mapas",
+    "mapas_de": "SISTEMA",
+    "versiones": "Mapas/Versiones",
+    "bases": "Bases",
+    "incidencias": "Incidencias"
+  },
+  "frontmatter": {
+    "area": [
+      "Sistema"
+    ],
+    "tema": [
+      "Wiki repo"
+    ]
+  },
+  "_mapas": "Cada mapa: n · fuente (el .canvas del repo) · titulo · mapea · generador · libres (ids que el humano puede mover). Opcional `issue`.",
+  "mapas": [
+    {
+      "n": 1,
+      "fuente": "el_wiki_repo.canvas",
+      "titulo": "El wiki repo",
+      "mapea": "qué guarda el repo, qué guarda la bóveda, las cinco compuertas entre medias, por dónde vuelve lo que edita una persona y qué sigue sin cerrar",
+      "generador": "docs/wiki/generar_wiki_repo.py",
+      "libres": [
+        "leyenda",
+        "tesis"
+      ]
+    }
+  ],
+  "_bases": "Sólo el histórico, que se genera solo. Una Base sobre las siete piezas del sistema exige antes una nota por pieza: `base_lib` rechaza en duro una columna que ninguna nota declare. El mapa lo dibuja como hueco (`d_sin_bases`).",
+  "bases": [
+    {
+      "n": 1,
+      "titulo": "Versiones de mapas de SISTEMA",
+      "fuente": "01 — Versiones de mapas de SISTEMA.base",
+      "generador": "docs/wiki/generar_versiones.py",
+      "tabula": "el histórico de diseños: cada canvas que se archivó antes de que el siguiente lo pisara",
+      "indice": "00 — Versiones de mapas de SISTEMA",
+      "gancho": "🗄️ el histórico de diseños"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# pre-push: el sello COMPLETO en un brazo temporal. Push sin este hook = sello no verificado.
+# ⟨ajustar⟩ las dos órdenes marcadas: la que produce el brazo y la que lo compara con el sello.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+B=$(mktemp -d "${TMPDIR:-/tmp}/prepush.XXXXXX")
+trap 'echo "brazo conservado en $B"' EXIT
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1   # sellos bit a bit: BLAS a un hilo
+# Una plantilla SIN AJUSTAR bloquea: un hook que no corre nada y dice «IDÉNTICO» es una
+# compuerta que pasa en vacío, y eso es peor que no tener hook.
+sin_ajustar() { echo "pre-push SIN AJUSTAR: falta $1 (scripts/hooks/pre-push)" >&2; exit 1; }
+echo "pre-push · corrida completa en $B"
+sin_ajustar "la orden que produce el brazo, p. ej. python3 -m paquete corre --salida \$B"
+echo "pre-push · comparación con el sello"
+sin_ajustar "la orden que compara \$B con la referencia sellada y sale ≠ 0 si difiere"
+trap - EXIT
+rm -rf "$B"
+echo "pre-push · sello IDÉNTICO"

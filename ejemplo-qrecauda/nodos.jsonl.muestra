@@ -1,0 +1,30 @@
+{"nodo": "F0.00", "estado": "hecho", "evidencia": "a5bf535", "fecha": "2026-10-07"}
+{"nodo": "F0.01", "estado": "hecho", "evidencia": "a5bf535", "fecha": "2026-10-07"}
+{"nodo": "F0.02", "estado": "hecho", "evidencia": "b11f4eb", "fecha": "2026-10-07"}
+{"nodo": "F0.03", "estado": "hecho", "evidencia": "a5bf535", "fecha": "2026-10-07"}
+{"nodo": "F0.04", "estado": "hecho", "evidencia": "564dc94", "fecha": "2026-10-07"}
+{"nodo": "F0.05", "estado": "hecho", "evidencia": "a5bf535", "fecha": "2026-10-07"}
+{"nodo": "F0.08", "estado": "hecho", "evidencia": "a5bf535", "fecha": "2026-10-07"}
+{"nodo": "R.00", "estado": "hecho", "evidencia": "564dc94", "fecha": "2026-10-07"}
+{"nodo": "F1.01", "estado": "hecho", "evidencia": "0419140", "fecha": "2026-10-07"}
+{"nodo": "F1.02", "estado": "hecho", "evidencia": "0419140", "fecha": "2026-10-07"}
+{"nodo": "F1.03", "estado": "hecho", "evidencia": "0419140", "fecha": "2026-10-07"}
+{"nodo": "F2.01", "estado": "hecho", "evidencia": "564dc94", "fecha": "2026-10-07"}
+{"nodo": "F2.02", "estado": "hecho", "evidencia": "564dc94", "fecha": "2026-10-07"}
+{"nodo": "F2.03", "estado": "hecho", "evidencia": "564dc94", "fecha": "2026-10-07"}
+{"nodo": "S.01", "estado": "hecho", "evidencia": "7856f4e", "fecha": "2026-10-07"}
+{"nodo": "S.02", "estado": "hecho", "evidencia": "7856f4e", "fecha": "2026-10-07"}
+{"nodo": "S.03", "estado": "hecho", "evidencia": "7856f4e", "fecha": "2026-10-07"}
+{"nodo": "S.04", "estado": "hecho", "evidencia": "7856f4e", "fecha": "2026-10-07"}
+{"nodo":"P.E0","estado":"hecho","evidencia":"f8e21d0","fecha":"2026-10-07"}
+{"nodo":"F2.06","estado":"hecho","evidencia":"73c4c42","fecha":"2026-10-07"}
+{"nodo":"F5.01","estado":"hecho","evidencia":"42b54c9","fecha":"2026-10-07"}
+{"nodo":"F5.02","estado":"hecho","evidencia":"42b54c9","fecha":"2026-10-07"}
+{"nodo":"F6.01","estado":"hecho","evidencia":"aea23de","fecha":"2026-10-07"}
+{"nodo":"F3.01","estado":"hecho","evidencia":"5312674","fecha":"2026-10-07"}
+{"nodo":"F3.02","estado":"hecho","evidencia":"5312674","fecha":"2026-10-07"}
+{"nodo":"F3.03","estado":"hecho","evidencia":"5312674","fecha":"2026-10-07"}
+{"nodo":"F0.06","estado":"hecho","evidencia":"d9609a1","fecha":"2026-10-07"}
+{"nodo":"F0.07","estado":"hecho","evidencia":"d9609a1","fecha":"2026-10-07"}
+{"nodo":"F7.03","estado":"hecho","evidencia":"d9609a1","fecha":"2026-10-07"}
+{"nodo":"F6.02","estado":"hecho","evidencia":"a7cd133","fecha":"2026-10-07"}

@@ -1,0 +1,8 @@
+{
+  "_": "docs/ es el wiki repo PUBLICADO de esta skill (los artefactos que dejó en wiki/SISTEMA/), no la capacidad que se sube; además su .base lleva raya larga en el nombre y el cargador la rechaza. El generador y el manifiesto sí valen como ejemplo, con nombres que el cargador acepta.",
+  "excluir": ["docs"],
+  "ejemplos": {
+    "docs/wiki/generar_wiki_repo.py": "ejemplos/generar_wiki_repo.py",
+    "docs/wiki/wiki.json": "ejemplos/wiki.json"
+  }
+}

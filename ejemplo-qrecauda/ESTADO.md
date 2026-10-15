@@ -1,0 +1,102 @@
+# ESTADO de QRECAUDA
+
+> GENERADO por `dag.py estado` desde `plan/plan.json` y `registro/`. No se edita a mano.
+
+Plan v1 · 2026-10-07
+
+## Nodos del plan (79)
+
+| estado | nodos |
+|---|---|
+| bloqueado | 1 |
+| hecho | 70 |
+| juzgado | 5 |
+| pendiente | 3 |
+
+## En curso, bloqueados y pausados
+
+- **C.E4** (bloqueado) E4 · tres trabajos en hardware de IBM y su gemelo en Aer — sin credencial IBM
+
+## Listos
+
+- ninguno
+
+## Hechos y juzgados
+
+| nodo | estado | evidencia | título |
+|---|---|---|---|
+| F0.00 | hecho | `a5bf535` | Repo git con la identidad del usuario |
+| F0.01 | hecho | `a5bf535` | uv, pyproject y árbol de capas |
+| F0.02 | hecho | `b11f4eb` | FUNDAMENTO, DISENO y GLOSARIO |
+| F0.03 | hecho | `a5bf535` | Decisiones D-001…D-008 |
+| F0.04 | hecho | `564dc94` | Contratos de imports y trinquetes de arquitectura |
+| F0.05 | hecho | `a5bf535` | DAG verificable, registro append-only y ESTADO.md generado |
+| F0.06 | hecho | `d9609a1` | RETOMA.md y CLAUDE.md del repo |
+| F0.07 | hecho | `d9609a1` | Hooks commit-msg (sin atribución) y pre-push (CI local) |
+| F0.08 | hecho | `a5bf535` | CI local: ruff, mypy, lint-imports, pytest y DAG |
+| F0.09 | hecho | `1e8c1a9` | Remotos: GitHub público y espejo bare |
+| R.00 | hecho | `564dc94` | Revisión adversarial del diseño, antes de construir |
+| F1.01 | hecho | `0419140` | Bits inmutable y errores con nombre |
+| F1.02 | hecho | `0419140` | Extractores von Neumann, Peres y Toeplitz con LHL |
+| F1.03 | hecho | `0419140` | Entropía, métricas M1–M7 y Muestra con su origen |
+| F2.01 | hecho | `564dc94` | Puertos (Protocol) y datos con esquema versionado |
+| F2.02 | hecho | `564dc94` | Línea base PRNG y validador estadístico propio |
+| F2.03 | hecho | `564dc94` | Orquestador del pipeline (bala trazadora) |
+| F2.04 | hecho | `a898076` | Transversales: configuración, observabilidad, reproducibilidad, seguridad, concurrencia |
+| F2.05 | hecho | `dc0ab6d` | Presentación, fachada pública y CLI |
+| F2.06 | hecho | `73c4c42` | Capa de datos: InformeCorrida versionado y Almacén JSON append-only |
+| F2.07 | hecho | `44396b5` | Correr y juzgar: de la declaración al veredicto |
+| S.01 | hecho | `7856f4e` | Spike de versiones: qiskit, aer, runtime, mthree y nistrng en un mismo entorno |
+| S.02 | hecho | `7856f4e` | Spike de alcance de la mitigación: ¿TREX, ZNE y PEC actúan sobre bitstrings? |
+| S.03 | hecho | `7856f4e` | Spike de honestidad: el muestreo de AerSimulator es pseudoaleatorio |
+| S.04 | hecho | `7856f4e` | Spike del estimador SP 800-90B: qué herramienta, instalable y probada |
+| F3.01 | hecho | `5312674` | Circuito H⊗n + medición sobre AerSimulator con SamplerV2 |
+| F3.02 | hecho | `5312674` | Modelo de ruido del backend: lectura asimétrica, relajación y cross-talk |
+| F3.03 | hecho | `5312674` | Transpilación guiada (AIRouting / StagedPassManager) con salida local |
+| F3.04 | hecho | `80d6cc5` | SamplerV2 sobre hardware IBM con Batch/Session (opcional) |
+| F3.06 | hecho | `071484c` | Acceso a hardware IBM: corrida real o constancia de no acceso |
+| F3.05 | hecho | `bcd0dd2` | Composición y configuración de la demo con Aer ruidoso y mitigación |
+| F4.01 | hecho | `a9bd306` | Mitigación de lectura (TREX / mthree) como puerto Mitigador |
+| F4.02 | hecho | `ce52c0d` | ZNE y PEC/PNA sobre el observable de sesgo ⟨Z⟩ |
+| F5.01 | hecho | `42b54c9` | Batería NIST SP 800-22 con nistrng y contraste con el validador propio |
+| F5.02 | hecho | `42b54c9` | Min-entropía SP 800-90B y contraste con la cota MCV del dominio |
+| F5.05 | hecho | `01b3a7d` | Dimensionado conservador: el mínimo entre MCV, 90B y la contabilidad de entropía de la fuente |
+| F6.01 | hecho | `aea23de` | Cifrado AES-256-GCM con clave QRNG |
+| F6.02 | hecho | `a7cd133` | Transacción de peaje/Metro cifrada con la clave certificada |
+| F6.03 | hecho | `e5c5aaa` | Reserva asíncrona de claves: productor en otro proceso y consumidor con registro de consumo |
+| P.E0 | hecho | `f8e21d0` | Parámetros y aritmética de la cadena, fijados antes de medir |
+| P.E1 | hecho | `dae22a6` | Preinscripción E1: el pipeline entrega claves que cumplen M1–M5 con entrada ruidosa |
+| C.E1a | hecho | `89cdaba` | E1a · control: PRNG clásico pasa M1–M5 (la batería no distingue origen) |
+| C.E1b | hecho | `89cdaba` | E1b · Aer ruidoso sin mitigar |
+| C.E1c | hecho | `89cdaba` | E1c · Aer ruidoso mitigado |
+| C.E1d | hecho | `89cdaba` | E1d · control positivo: fuentes defectuosas rechazadas, fuente ideal aceptada |
+| E1 | juzgado | `89cdaba` | ¡EUREKA 1! Pipeline de punta a punta con veredicto M1–M5 y control negativo |
+| P.E2 | hecho | `43e2649` | Preinscripción E2: la mitigación reduce el sesgo de lectura bajo el 1 % |
+| C.E2 | hecho | `f22ffd3` | E2 · sesgo antes y después de TREX, ZNE y PEC en tres niveles de ruido |
+| E2 | juzgado | `f22ffd3` | ¡EUREKA 2! La mitigación mueve el sesgo bajo el umbral M1 |
+| P.E3 | hecho | `d0f062a` | Preinscripción E3: tasa, latencia y caso de uso |
+| C.E3 | hecho | `fdb4386` | E3 · tasa sostenida, latencia y ciclo de cifrado, a un hilo y con candado |
+| E3 | juzgado | `fdb4386` | ¡EUREKA 3! Tasa y latencia dentro de umbral con la transacción cifrada |
+| F7.03 | hecho | `d9609a1` | Modelo de amenazas |
+| P.E3b | hecho | `88d1d45` | Preinscripción E3b: la latencia de transacción con la clave de una reserva generada aparte |
+| C.E3b | hecho | `e1f47ce` | E3b · latencia y sostenibilidad con la clave de una reserva generada aparte |
+| E3b | juzgado | `e1f47ce` | ¡EUREKA 3b! La latencia de transacción cumple M7 con la clave de una reserva generada aparte |
+| P.E5 | hecho | `7a05bea` | Preinscripción E5: el control negativo del pipeline completo con fuentes defectuosas |
+| F5.06 | hecho | `f923eb4` | Ejecutor de E5: defectos sobre Aer con twirling real y el juez del control negativo |
+| C.E5 | hecho | `4349489` | E5 · control negativo del pipeline completo y efecto del dimensionado conservador |
+| E5 | juzgado | `f379ec0` | ¡EUREKA 5! La cadena rechaza o acorta la clave de una fuente defectuosa y no rechaza la buena |
+| F7.06 | hecho | `013fd62` | Prueba de integración: Aer → mitigación → extracción → validación → AES-GCM → descifrado |
+| T.TRL | hecho | `8039a6d` | Matriz de TRL por componente, derivada de la evidencia |
+| F7.05 | hecho | `7db7730` | Wiki repo: mapas, bases e incidencias publicados en la bóveda |
+| F7.01 | hecho | `faeb0d7` | Notebook reproducible con versiones exactas |
+| F7.02 | hecho | `db1b5cd` | Pitch de 10 slides |
+| F7.04 | hecho | `ca8cc07` | Roadmap TRL 4 → TRL 5 → piloto → producción |
+| P.E4 | hecho | `8344ba0` | Preinscripción E4: el hardware de IBM frente a su gemelo en Aer |
+| F3.07 | hecho | `04568ab` | Camino a hardware: FuenteIbm con twirling por PUBs, presupuesto de QPU, ensayo y qrecauda hardware |
+| F7.07 | hecho | `04568ab` | qrecauda demo: PRNG, Aer y Aer con twirling lado a lado, con AES-GCM y rótulo de origen |
+| F7.08 | hecho | `9e1b0a7` | Cuaderno vivo: del circuito a la clave cifrada, con FUENTE aer o ibm |
+| R.01 | hecho | `9048da9` | Revisión adversarial propia previa al release 0.1.0 |
+| REL-0.1.0 | hecho | `ea0d08a` | Release 0.1.0: pipeline QRNG reproducible en simulador (rótulo de TRL según T.TRL) |
+| R.02 | hecho | `aa8bc52` | Revisión adversarial propia previa al release 0.2.0 |
+| R.02c | hecho | `e4a9ff3` | Correcciones de los hallazgos de R.02 en el código: presupuesto QPU, claves reproducibles, productor, 90B, demo y CI |
+| REL-0.2.0 | hecho | `6ee0498` | Release 0.2.0: la reserva asíncrona de claves y la latencia de E3b |

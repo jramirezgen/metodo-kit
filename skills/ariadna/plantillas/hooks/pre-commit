@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# pre-commit: huellas + suite rápida. Instalación: ln -s ../../scripts/hooks/pre-commit .git/hooks/
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+echo "pre-commit · huellas"
+# ⟨ajustar⟩: una línea por fichero de huellas que vigila una referencia sellada o insumos versionados
+for h in $(git ls-files '*SHA256SUMS' '*SELLO_REFERENCIA.sha256' 2>/dev/null); do
+  (cd "$(dirname "$h")" && sha256sum --quiet -c "$(basename "$h")")
+done
+echo "pre-commit · suite"
+python3 -m pytest -q -x
